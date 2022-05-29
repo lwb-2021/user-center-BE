@@ -65,6 +65,18 @@ public class AccountController {
         StpUtil.logout();
         return SaResult.ok("退出成功");
     }
+
+    @RequestMapping("/verify")
+    public SaResult verify(){
+        long id = StpUtil.getLoginIdAsLong();
+        Account account = this.accountService.getById(id);
+        return SaResult.get(200, "操作成功", account);
+    }
+    @RequestMapping("/checkLogin")
+    public SaResult checkLogin(){
+        StpUtil.checkLogin();
+        return SaResult.ok("已登录");
+    }
     @RequestMapping("/register")
     public SaResult register(@RequestBody StringMap requestMap){
         long id = SnowflakeIdWorker.getInstance().nextId();
