@@ -28,6 +28,6 @@ public class Account {
         this.password = password;
     }
     public boolean canLogin(String username, String password){
-        return state == 0 && this.username.equals(username) && this.password.equals(password);
+        return this.username.equals(username) && this.password.equals(password);
     }
 }

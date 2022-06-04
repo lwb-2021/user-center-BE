@@ -51,6 +51,7 @@ public class AccountController {
             SpringMVCUtil.getResponse().setStatus(400);
             return SaResult.get(400, "用户名或密码错误", account);
         }else if (account.getState() == 1){
+            SpringMVCUtil.getResponse().setStatus(400);
             return SaResult.get(400, "账号已锁定", account);
         }
 
