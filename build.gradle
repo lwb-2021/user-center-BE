@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.lwb_2021'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.1-SNAPSHOT'
 
 configurations {
     developmentOnly

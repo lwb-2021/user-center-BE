@@ -50,6 +50,8 @@ public class AccountController {
         if(account == null || !account.canLogin(username, password)){
             SpringMVCUtil.getResponse().setStatus(400);
             return SaResult.get(400, "用户名或密码错误", account);
+        }else if (account.getState() == 1){
+            return SaResult.get(400, "账号已锁定", account);
         }
 
         StringMap map = new StringMap();
